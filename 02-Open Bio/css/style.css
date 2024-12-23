@@ -1,0 +1,18 @@
+body{
+    background-color: black;
+    color: white;
+}
+.btn{
+    cursor:pointer;
+}
+.bio{
+    height: 0;
+    overflow: hidden;
+    transition: all 600ms;
+    background-color:  rgb(133, 142, 138);
+}
+.openBio{
+    height: 80px;
+    transition: all 1s;
+    padding: 15px;
+}
