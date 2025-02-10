@@ -3,9 +3,10 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('pages.welcome')-> with (['title' => 'مزرعه طلایی']);
-});
+Route::view('/' , 'pages.welcome',['title' => 'مزرعه طلایی']) ;
+Route::view('/about' , 'pages.about',['title' => 'مزرعه طلایی']) ;
+Route::view('/products' , 'pages.products',['title' => 'مزرعه طلایی']) ;
+Route::view('/contact' , 'pages.contact',['title' => 'مزرعه طلایی']) ;
 
 Route::get('/dashboard', function () {
     return view('dashboard');
