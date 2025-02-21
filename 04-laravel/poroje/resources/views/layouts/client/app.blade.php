@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>{{ $title }}</title>
+        <title>{{ $title }} | @yield('title')</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Font Awesome icons (free version)-->
@@ -19,7 +19,8 @@
 
     <body id="page-top">
         <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
+        <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top "
+        id="mainNav">
             <div class="container">
                 <a class="navbar-brand" href="/">Golden Farm</a>
                 <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -28,40 +29,25 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto">
-                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="/products">محصولات</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="/products">محصولات</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="/about">درباره ما</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="/contact">تماس با ما</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
-  
-        <!-- About Section-->
-        <section class="page-section mt-5  bg-primary text-white mb-0" id="about">
-            <div class="container">
-                <!-- About Section Heading-->
-                <h2 class="page-section-heading text-center text-uppercase text-white">درباره ما</h2>
-                <!-- Icon Divider-->
-                <div class="divider-custom divider-light">
-                    <div class="divider-custom-line"></div>
-                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                    <div class="divider-custom-line"></div>
-                </div>
-                <!-- About Section Content-->
-                <div class="row">
-                    <div class="col-lg-4 ms-auto"><p class="lead">مزرعه گاردن با افتخار یکی از پیشروان در کشت کلزا و تولید محصولات با کیفیت بالا از این گیاه ارزشمند است. ما با بهره‌گیری از روش‌های پیشرفته کشاورزی و تکنولوژی‌های روز دنیا، مزارعی سرسبز و پرمحصول ایجاد کرده‌ایم. هدف ما ارائه محصولات سالم و پایدار است که نه تنها به نیازهای غذایی جامعه پاسخ می‌دهند، بلکه به حفظ محیط زیست نیز کمک می‌کنند</p></div>
-                    <div class="col-lg-4 me-auto"><p class="lead">در مزرعه گاردن، تعهد به کیفیت و پایداری در هر گام از فرآیند تولید مشهود است. از کاشت و برداشت تا فرآوری و بسته‌بندی، ما با دقت و حرفه‌ای‌گری به جزئیات توجه می‌کنیم. تیم ما از کارشناسان مجرب و متخصص تشکیل شده که با عشق و علاقه به کشاورزی، هر روز در تلاشند تا بهترین محصولات را به بازار عرضه کنند. از مزارع طلایی کلزا تا محصولات نهایی، همواره به دنبال رضایت مشتریان و ایجاد تاثیر مثبت در جامعه هستیم</p></div>
-                </div>
-                <!-- About Section Button-->
-                <div class="text-center mt-4">
-                    <a class="btn btn-xl btn-outline-light" href="https://startbootstrap.com/theme/freelancer/">
-                        <i class="fas fa-download me-2"></i>
-                        Download Catalog
-                    </a>
-                </div>
-            </div>
-        </section>
+<nav class="navbar navbar-expand-lg  fixed-top " aria-label="breadcrumb" 
+ style="top:60px; padding:45px 0 0 15px; background:#ffffff  ; z-index:0 ">
+  <ol class="breadcrumb">
+    @section('breadcrumb')
+    <li class="breadcrumb-item"><a href="#">Home</a></li>
+    @show
+    
+  </ol>
+</nav>
        
+        @yield('content')
+
         <!-- Footer-->
         <footer class="footer text-center">
             <div class="container">
